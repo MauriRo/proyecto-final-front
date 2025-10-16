@@ -1,0 +1,179 @@
+<div class="inicio-container">
+  <!-- Hero principal -->
+  <section class="hero">
+    <div class="overlay"></div>
+    <div class="hero-content text-center">
+      <h1 class="display-4 fw-bold">Descubre los mejores hoteles</h1>
+      <p class="lead">Explora lugares únicos, vive experiencias exclusivas y reserva con confianza.</p>
+      <button class="btn btn-lg btn-explore">Explorar ahora</button>
+    </div>
+  </section>
+
+  <!-- Sección de destinos destacados -->
+  <section class="destinos py-5">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold text-primary">Destinos Destacados</h2>
+      <p class="text-muted">Encuentra tu próximo destino ideal</p>
+    </div>
+    <div class="destinos-grid">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=800&q=80" alt="Hotel Playa">
+        <div class="card-body">
+          <h5 class="card-title">Hotel Playa Azul</h5>
+          <p class="card-text">Un paraíso frente al mar con todo incluido.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" alt="Montañas">
+        <div class="card-body">
+          <h5 class="card-title">Cabañas del Bosque</h5>
+          <p class="card-text">Relájate rodeado de naturaleza y aire fresco.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=800&q=80" alt="Ciudad">
+        <div class="card-body">
+          <h5 class="card-title">Hotel Urbano</h5>
+          <p class="card-text">Comodidad moderna en el corazón de la ciudad.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección de servicios -->
+  <section class="servicios py-5 text-center">
+    <h2 class="fw-bold text-primary mb-4">Nuestros Servicios</h2>
+    <div class="servicios-grid">
+      <div class="servicio">
+        <i class="fas fa-concierge-bell fa-3x mb-3 text-primary"></i>
+        <h5>Reservas Rápidas</h5>
+        <p>Gestiona tus reservas con facilidad y rapidez.</p>
+      </div>
+      <div class="servicio">
+        <i class="fas fa-map-marked-alt fa-3x mb-3 text-primary"></i>
+        <h5>Guías Turísticas</h5>
+        <p>Explora lo mejor de cada destino con nuestras guías.</p>
+      </div>
+      <div class="servicio">
+        <i class="fas fa-star fa-3x mb-3 text-primary"></i>
+        <h5>Experiencias Premium</h5>
+        <p>Hospédate en hoteles de lujo con servicios exclusivos.</p>
+      </div>
+    </div>
+  </section>
+</div>
+;<style>
+      .inicio-container {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+  }
+
+  /* Hero section */
+  .hero {
+    position: relative;
+    height: 85vh;
+    background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero .overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+  }
+
+  .hero-content {
+    position: relative;
+    color: #fff;
+    z-index: 2;
+    max-width: 700px;
+  }
+
+  .btn-explore {
+    background: #007bff;
+    border: none;
+    color: white;
+    padding: 12px 35px;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: background 0.3s ease;
+  }
+
+  .btn-explore:hover {
+    background: #0056b3;
+  }
+
+  /* Destinos */
+  .destinos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 30px;
+    padding: 0 40px;
+  }
+
+  .card {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-8px);
+  }
+
+  .card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .card-body {
+    padding: 20px;
+  }
+
+  /* Servicios */
+  .servicios {
+    background-color: #f8f9fa;
+  }
+
+  .servicios-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    padding: 0 20px;
+  }
+
+  .servicio {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    width: 280px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .servicio:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  }
+
+  @media (max-width: 768px) {
+    .hero {
+      height: 60vh;
+    }
+
+    .hero-content h1 {
+      font-size: 2rem;
+    }
+
+    .servicios-grid {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+</style>

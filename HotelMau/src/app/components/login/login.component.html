@@ -1,0 +1,113 @@
+<div class="d-flex justify-content-center align-items-center vh-100 login-bg">
+  <form (ngSubmit)="onLogin()" class="login-form">
+    <h3 class="mb-4 text-center fw-bold text-gradient">Iniciar Sesión</h3>
+
+    <div class="mb-4">
+      <label for="username" class="form-label fw-semibold">Usuario</label>
+      <input
+        [(ngModel)]="username"
+        name="username"
+        id="username"
+        type="text"
+        class="form-control form-control-lg input-animate"
+        placeholder="Usuario"
+        required
+      />
+    </div>
+
+    <div class="mb-4">
+      <label for="password" class="form-label fw-semibold">Contraseña</label>
+      <input
+        [(ngModel)]="password"
+        name="password"
+        id="password"
+        type="password"
+        class="form-control form-control-lg input-animate"
+        placeholder="Contraseña"
+        required
+      />
+    </div>
+
+    <button type="submit" class="btn btn-gradient btn-lg w-100 shadow-lg">
+      Iniciar Sesión
+    </button>
+
+    <p *ngIf="error" class="mt-4 text-danger text-center fw-semibold">
+      {{ error }}
+    </p>
+  </form>
+</div>
+
+<style>
+/* ======== FONDO ======== */
+.login-bg {
+  background: linear-gradient(135deg, #0f172a, #1e293b, #334155);
+  background-size: 300% 300%;
+  animation: gradientShift 8s ease infinite;
+}
+
+/* Animación suave del fondo */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ======== FORMULARIO ======== */
+.login-form {
+  width: 420px;
+  max-width: 90%;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(14px);
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+  padding: 45px 40px;
+  color: #e2e8f0;
+  animation: fadeIn 0.8s ease-in-out;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Animación de entrada */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ======== TITULO ======== */
+.text-gradient {
+ 
+  -webkit-text-fill-color: #e2e8f0;
+}
+
+/* ======== INPUTS ======== */
+.input-animate {
+  border: 2px solid transparent;
+  background-color: rgba(255, 255, 255, 0.9);
+  transition: all 0.3s ease;
+  border-radius: 0.75rem;
+  color: #111;
+}
+
+.input-animate:focus {
+  border-color: #facc15;
+  box-shadow: 0 0 10px rgba(250, 204, 21, 0.5);
+  transform: scale(1.02);
+}
+
+/* ======== BOTÓN ======== */
+.btn-gradient {
+  background: linear-gradient(90deg, #1e3a8a, #0f172a);
+  border: 1px solid #facc15;
+  color: #facc15;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.btn-gradient:hover {
+  background: linear-gradient(90deg, #facc15, #eab308);
+  color: #1e293b;
+  transform: scale(1.03);
+  box-shadow: 0 8px 20px rgba(250, 204, 21, 0.4);
+}
+</style>

@@ -1,0 +1,99 @@
+<nav class="navbar navbar-expand-lg navbar-dark custom-navbar shadow-sm">
+  <div class="container-fluid">
+    <a class="navbar-brand fw-bold" routerLink="/dashboard">
+      <i class="fas fa-cubes me-2"></i>Hotel TR
+    </a>
+    <button
+      class="navbar-toggler"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/dashboard/categorias" routerLinkActive="active">
+            <i class="fas fa-tags me-1"></i>Huespedes
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/dashboard/proveedores" routerLinkActive="active">
+            <i class="fas fa-truck me-1"></i>Habitaciones
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/dashboard/productos" routerLinkActive="active">
+            <i class="fas fa-box me-1"></i>Reservas
+          </a>
+        </li>
+        
+      </ul>
+    </div>
+
+    <div class="d-flex align-items-center">
+      <span class="text-light me-3 d-flex align-items-center">
+        <i class="fas fa-user-circle me-2 fs-5"></i>
+        <span *ngIf="username">Bienvenido {{ username }}</span>
+      </span>
+      <button class="btn btn-outline-light btn-sm logout-btn" (click)="logout()">
+        <i class="fas fa-sign-out-alt me-2"></i>Cerrar sesión
+      </button>
+    </div>
+  </div>
+</nav>
+
+<style>
+.custom-navbar {
+  background: linear-gradient(90deg, #212529 0%, #343a40 50%, #212529 100%);
+  border-bottom: 2px solid #00b4d8;
+  font-family: 'Poppins', sans-serif;
+}
+
+.navbar-brand {
+  color: #00b4d8 !important;
+  font-size: 1.25rem;
+  transition: color 0.3s ease;
+}
+
+.navbar-brand:hover {
+  color: #90e0ef !important;
+}
+
+.nav-link {
+  color: #f8f9fa !important;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 10%;
+  width: 0;
+  height: 2px;
+  background: #00b4d8;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 80%;
+}
+
+.logout-btn {
+  border-color: #00b4d8;
+  color: #00b4d8;
+  transition: 0.3s;
+}
+
+.logout-btn:hover {
+  background-color: #00b4d8;
+  color: #fff;
+}
+</style>
