@@ -1,0 +1,101 @@
+<nav class="navbar navbar-expand-lg navbar-dark custom-navbar shadow-sm">
+  <div class="container-fluid">
+    <a class="navbar-brand fw-bold" routerLink="/dashboard">
+      <i class="fas fa-cubes me-2"></i>Hotel TR
+    </a>
+    <button
+      class="navbar-toggler"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/dashboard/huespedes" routerLinkActive="active">
+            <i class="fas fa-tags me-1"></i>Huéspedes
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/dashboard/habitaciones" routerLinkActive="active">
+            <i class="fas fa-truck me-1"></i>Habitaciones
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/dashboard/productos" routerLinkActive="active">
+            <i class="fas fa-box me-1"></i>Reservas
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="d-flex align-items-center">
+      <span class="text-light me-3 d-flex align-items-center">
+        <i class="fas fa-user-circle me-2 fs-5"></i>
+        <span *ngIf="username">Bienvenido {{ username }}</span>
+      </span>
+      <button class="btn btn-outline-light btn-sm logout-btn" (click)="logout()">
+        <i class="fas fa-sign-out-alt me-2"></i>Cerrar sesión
+      </button>
+    </div>
+  </div>
+</nav>
+
+<style>
+.custom-navbar {
+  background: linear-gradient(to right, #0a1f44, #133a63); /* Azul corporativo */
+  border-bottom: 2px solid #c9a94b; /* Dorado premium */
+  font-family: 'Poppins', sans-serif;
+}
+
+.navbar-brand {
+  color: #c9a94b !important; /* Dorado */
+  font-size: 1.3rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+}
+
+.navbar-brand:hover {
+  color: #e2c675 !important; /* Dorado suave */
+}
+
+.nav-link {
+  color: #f8f9fa !important;
+  transition: all 0.3s ease;
+  position: relative;
+  font-weight: 500;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 10%;
+  width: 0;
+  height: 2px;
+  background: #c9a94b;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 80%;
+}
+
+.logout-btn {
+  border-color: #c9a94b;
+  color: #c9a94b;
+  transition: 0.3s;
+}
+
+.logout-btn:hover {
+  background-color: #c9a94b;
+  color: #0a1f44;
+}
+</style>

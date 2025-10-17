@@ -1,0 +1,24 @@
+<div class="app-container">
+    <app-navbar></app-navbar>
+    <main>
+        <router-outlet/>
+        
+    </main>
+    <app-footer></app-footer>
+</div>
+
+
+<style>
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 0vh;
+  
+}
+
+main {
+  flex: 1;
+  padding-top: 0px; /* 👈 Ajusta según la altura de tu navbar */
+  background-color: #f8f9fa;
+}
+</style>
